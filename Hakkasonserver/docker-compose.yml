@@ -1,0 +1,36 @@
+services:
+  # my-recommendation-apiが依存するサービス
+  # postgresサービスの定義
+  postgres:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: hackathon_db
+    ports:
+      - "5432:5432"
+
+  # redisサービスの定義
+  redis:
+    image: redis:7
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # my-recommendation-api サービスの定義
+  my-recommendation-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8082:80"
+    depends_on:
+      - postgres # <- ここで依存関係を宣言
+      - redis    # <- ここで依存関係を宣言
+    volumes:
+      # ホストの ./TestData をコンテナの /app/TestData にマウント
+      - ./TestData:/app/TestData
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=postgres;Database=hackathon_db;Username=postgres;Password=password

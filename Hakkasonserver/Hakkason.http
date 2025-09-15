@@ -1,0 +1,6 @@
+@Hakkason_HostAddress = http://localhost:5168
+
+GET {{Hakkason_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
