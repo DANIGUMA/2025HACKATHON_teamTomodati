@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "621102172899",
+    "project_id": "unitychatapp-82044",
+    "storage_bucket": "unitychatapp-82044.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621102172899:android:17ef6f13856011105393d6",
+        "android_client_info": {
+          "package_name": "com.TeamTomodachi.ChatApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJNoiVlUw44uax4IxnUtEneavSmm9kYqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
